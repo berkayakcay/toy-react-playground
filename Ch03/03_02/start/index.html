@@ -21,13 +21,15 @@
         </header>
       );
     }
-    function Main() {
+    function Main(props) {
+      console.log(props);
       return (
         <section>
-          <p>
-            We serve the most delicious food
-            around
-          </p>
+          <ul>
+            {props.dishes.map((dish) => (
+              <li>{dish}</li>
+            ))}
+          </ul>
         </section>
       );
     }
@@ -39,11 +41,17 @@
         </footer>
       );
     }
+
+    const dishes = [
+      "Black Bean Soup",
+      "Macaroni and Cheese"
+    ];
+
     function App() {
       return (
         <div>
           <Header name="Berkay" />
-          <Main />
+          <Main dishes={dishes} />
           <Footer year={new Date().getFullYear()} />
         </div>
       );
