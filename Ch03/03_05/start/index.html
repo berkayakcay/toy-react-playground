@@ -62,7 +62,7 @@
 
     function App() {
       return (
-        <div>
+        <React.Fragment>
           <Header name="Cindy" />
           <Main
             adjective="amazing"
@@ -71,7 +71,7 @@
           <Footer
             year={new Date().getFullYear()}
           />
-        </div>
+        </React.Fragment>
       );
     }
 
